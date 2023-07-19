@@ -1,2 +1,17 @@
-package r6;public class Main {
+package r6;
+
+import r5.CommonRes;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Store store = new Store();
+        Producer producer = new Producer(store);
+        Consumer consumer = new Consumer(store);
+        new Thread(producer).start();
+        new Thread(consumer).start();
+
+    }
+
 }
